@@ -11,23 +11,10 @@
         <methods>
           <include name="beforeMethod"/>
           <include name="initBrowser"/>
-          <include name="cruiseTest" invocation-numbers="1 2"/>
+          <include name="cruiseTest" invocation-numbers="4"/>
           <include name="afterTest"/>
         </methods>
       </class> <!-- com.atmecs.yatra.testscript.YatraCruiseTest -->
     </classes>
   </test> <!-- FirefoxTest(failed) -->
-  <test thread-count="5" parallel="tests" name="ChromeTest(failed)" verbose="0">
-    <parameter name="browser" value="chrome"/>
-    <classes>
-      <class name="com.atmecs.yatra.testscript.YatraMonumentsTest">
-        <methods>
-          <include name="beforeMethod"/>
-          <include name="initBrowser"/>
-          <include name="yatraMonuments"/>
-          <include name="afterTest"/>
-        </methods>
-      </class> <!-- com.atmecs.yatra.testscript.YatraMonumentsTest -->
-    </classes>
-  </test> <!-- ChromeTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

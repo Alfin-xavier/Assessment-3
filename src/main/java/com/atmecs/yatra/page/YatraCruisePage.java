@@ -9,7 +9,8 @@ import com.atmecs.yatra.methods.YatraCruiseMethods;
 import com.atmecs.yatra.utils.Logging;
 import com.atmecs.yatra.utils.PropertyReader;
 
-public class YatraCruisePage {
+public class YatraCruisePage 
+{
 	public WebDriver driver;
 
 	YatraCruiseMethods methods;
@@ -18,11 +19,13 @@ public class YatraCruisePage {
 
 	Logging log;
 
-	public YatraCruisePage(WebDriver driver) {
+	public YatraCruisePage(WebDriver driver) 
+	{
 		this.driver = driver;
 	}
 
-	public void cruisePage(String destination, String depature, String duration, String cruiseline) {
+	public void cruisePage(String destination, String depature, String duration, String cruiseline) 
+	{
 		methods = new YatraCruiseMethods(driver);
 
 		log = new Logging();
@@ -61,13 +64,15 @@ public class YatraCruisePage {
 
 		methods.clickSearch(cruiseProps.getProperty("search_cruise"), cruiseProps.getProperty("cruise_booking"));
 
-		log.info("Clicking itinaries icon");
-
-		methods.clickItineraryIcon(cruiseProps.getProperty("itineraries_menu"));
-
-		log.info("Getting number of itineraries ");
-
-		methods.getItinerariesList(cruiseProps.getProperty("itineraries_list"));
+		/*
+		 * log.info("Clicking itinaries icon");
+		 * 
+		 * methods.clickItineraryIcon(cruiseProps.getProperty("itineraries_menu"));
+		 * 
+		 * log.info("Getting number of itineraries ");
+		 * 
+		 * methods.getItinerariesList(cruiseProps.getProperty("itineraries_list"));
+		 */
 
 	}
 }

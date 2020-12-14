@@ -63,12 +63,13 @@ public class BasePage
 	  TestNGListeners.driver = driver;
 	  }
 	
-		/*
-		 * @BeforeTest public void initBrowser() throws MalformedURLException { String
-		 * gridUrl = "http://192.168.163.1:4445/wd/hub"; Capabilities cabs =
-		 * DesiredCapabilities.chrome(); driver = new RemoteWebDriver(new URL(gridUrl),
-		 * cabs); }
-		 */
+		@BeforeTest
+		public void initBrowser() throws MalformedURLException 
+		{
+			String gridUrl = "http://192.168.163.1:4445/wd/hub";
+			Capabilities cabs = DesiredCapabilities.chrome();
+			driver = new RemoteWebDriver(new URL(gridUrl), cabs);
+		}
 
 		@AfterMethod
 		public void afterTest() 

@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 public class YatraMonumentsMethods 
 {
@@ -30,16 +31,8 @@ public class YatraMonumentsMethods
 	public void sectionDisplayed(String xpath1, String xpath2)
 	{
 		WebElement monumentsSection = driver.findElement(By.xpath(xpath1));
-		if(monumentsSection.isDisplayed()== false)
-		{
-			System.out.println("Section is not displayed");
-			
-		}
+		Assert.assertTrue(monumentsSection.isDisplayed());
 		
-		else
-		{
-			System.out.println("Section is displayed");
-			
 			driver.manage().timeouts().implicitlyWait(2000, TimeUnit.SECONDS);
 		
 			List<WebElement> img = monumentsSection.findElements(By.className("image-holder"));
@@ -48,12 +41,10 @@ public class YatraMonumentsMethods
 			
 			for(int i= 0; i<img.size();i++)
 			{
-				boolean text = img.get(i).isEnabled();
+				boolean text = img.get(i).isDisplayed();
 				System.out.println("Top Monuments:"+ text);
 				
 			}
 			
-		}
-		
 	}
 }

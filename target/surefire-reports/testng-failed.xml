@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Suite]" parallel="tests">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
   <listeners>
     <listener class-name="com.atmecs.yatra.utils.TestNGListeners"/>
   </listeners>
-  <test thread-count="5" verbose="0" name="FirefoxTest(failed)" parallel="tests">
-    <parameter name="browser" value="firefox"/>
+  <test thread-count="5" parallel="tests" name="ChromeTest(failed)" verbose="0">
+    <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.atmecs.yatra.testscript.YatraMonumentsTest">
+      <class name="com.atmecs.yatra.testscript.YatraCruiseTest">
         <methods>
           <include name="beforeMethod"/>
-          <include name="initBrowser"/>
-          <include name="yatraMonuments"/>
-          <include name="afterTest"/>
+          <include name="cruiseTest"/>
+          <include name="afterMethod"/>
         </methods>
-      </class> <!-- com.atmecs.yatra.testscript.YatraMonumentsTest -->
+      </class> <!-- com.atmecs.yatra.testscript.YatraCruiseTest -->
     </classes>
-  </test> <!-- FirefoxTest(failed) -->
+  </test> <!-- ChromeTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

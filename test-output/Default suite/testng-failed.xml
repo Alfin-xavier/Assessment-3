@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="com.atmecs.yatra.testscript.YatraMonumentsTest">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="yatraMonuments"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- com.atmecs.yatra.testscript.YatraMonumentsTest -->
+      <class name="com.atmecs.yatra.testscript.YatraCruiseTest">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="cruiseTest"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- com.atmecs.yatra.testscript.YatraCruiseTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

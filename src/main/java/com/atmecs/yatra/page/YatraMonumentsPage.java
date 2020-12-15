@@ -2,6 +2,7 @@ package com.atmecs.yatra.page;
 
 import java.util.Properties;
 import org.openqa.selenium.WebDriver;
+import org.testng.Reporter;
 
 import com.atmecs.yatra.constants.FilePathConstants;
 import com.atmecs.yatra.methods.YatraMonumentsMethods;
@@ -31,15 +32,15 @@ public class YatraMonumentsPage
 
 		cruiseProps = PropertyReader.readProperties(FilePathConstants.MONUMENTS_LOCATORS);
 		
-		log.info("Clicking the + More option");
+		Reporter.log("Clicking the + More option");
 
 		methods.clickMoreLink(cruiseProps.getProperty("more_link"));
 		
-		log.info("Clicking the Monument tab");
+		Reporter.log("Clicking the Monument tab");
 		
 		methods.clickMonumentTab(cruiseProps.getProperty("monuments_menu"));
 		
-		log.info("Checking the top monument section");
+		Reporter.log("Checking the top monument section");
 		
 		methods.sectionDisplayed(cruiseProps.getProperty("top_monuments_section"), cruiseProps.getProperty("view_all"));
 	}

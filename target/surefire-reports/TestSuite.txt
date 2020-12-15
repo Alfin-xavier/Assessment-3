@@ -1,14 +1,15 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 12, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 151.655 s <<< FAILURE! - in TestSuite
-com.atmecs.yatra.testscript.YatraMonumentsTest.yatraMonuments  Time elapsed: 0.896 s  <<< FAILURE!
-org.openqa.selenium.ElementNotInteractableException: 
-Element <a id="booking_engine_monument" class="relative" href="javascript:void(0);"> could not be scrolled into view
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 104.053 s <<< FAILURE! - in TestSuite
+com.atmecs.yatra.testscript.YatraCruiseTest.cruiseTest  Time elapsed: 13.451 s  <<< FAILURE!
+org.openqa.selenium.ElementClickInterceptedException: 
+element click intercepted: Element <span class="multiselect__placeholder">...</span> is not clickable at point (264, 189). Other element would receive the click: <div class="multiselect_input_wrapper">...</div>
+  (Session info: chrome=87.0.4280.88)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'ATMECSINLT-601', ip: '192.168.163.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 83.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20201112153044, moz:geckodriverVersion: 0.28.0, moz:headless: false, moz:processID: 26100, moz:profile: C:\Users\alfin.anthonyraj\A..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 3869415f-bc60-4205-9e01-dde23abd9b59
-	at com.atmecs.yatra.testscript.YatraMonumentsTest.yatraMonuments(YatraMonumentsTest.java:15)
+System info: host: 'ATMECSINLT-601', ip: '192.168.163.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\ALFIN~1.ANT\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:61900}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 5f67c4667cb7f3a3dfdfd3fbd5c10e63
+	at com.atmecs.yatra.testscript.YatraCruiseTest.cruiseTest(YatraCruiseTest.java:15)
 

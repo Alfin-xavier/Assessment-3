@@ -4,11 +4,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 public class YatraCruiseMethods 
 {
@@ -26,48 +25,62 @@ public class YatraCruiseMethods
 
 	public void clickCruiseTab(String xpath) 
 	{
+		driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
+		driver.findElement(By.xpath(xpath)).click();
+	}
+
+	public void selectValue(String xpath1, String xpath2) throws InterruptedException
+	{
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(xpath1)).click();
+		driver.findElement(By.xpath(xpath2)).click();
+	}
+	
+	public void clickSearchCruise(String xpath)
+	{
 		driver.findElement(By.xpath(xpath)).click();
 		driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
 	}
-
-	public void selectValue(String xpath1, String xpath2, String value)
-	{
-		driver.manage().timeouts().implicitlyWait(10000, TimeUnit.SECONDS);
-		WebElement cruise_section = driver.findElement(By.xpath(xpath1));
-		WebElement selectValue = cruise_section.findElement(By.xpath(xpath2));
-		selectValue.click();
-	}
 	
-	public void clickSearch(String xpath1, String xpath2)
-	{
-		driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
-		WebElement cruise_section = driver.findElement(By.xpath(xpath1));
-		WebElement searchButton = cruise_section.findElement(By.xpath(xpath2));
-		searchButton.click();
-	}
-	
-	public void switchingWindow() 
+	public void switchingWindow() throws InterruptedException 
 	{
 		Set<String> ids = driver.getWindowHandles();
 		Iterator<String> id = ids.iterator();
 		String parent = id.next();
+		driver.close();
 		String child = id.next();
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
 		driver.switchTo().window(child);
-		System.out.println("Child window title:" + driver.getTitle());
+		String title = driver.getTitle();
+		System.out.println("Current window title:" +title);
 		System.out.println("Current Url:" + driver.getCurrentUrl());
 	}
 	
-	public void clickItineraryIcon(String xpath)
+	public void verifyItineraries(String xpath1, String xpath2) throws InterruptedException
 	{
-		driver.findElement(By.xpath(xpath)).click();
+		WebElement itineraries = driver.findElement(By.xpath(xpath1));
+		itineraries.click();
+		List<WebElement> itinerary = driver.findElements(By.xpath(xpath2));
+		Assert.assertFalse(itinerary.isEmpty());
+		{
+			System.out.println("Number of days plan under Itinerary:"+itinerary.size());
+		}
+		Thread.sleep(3000);
 	}
 	
-	public void getItinerariesList(String xpath)
+	public void verifyItinerariesList(String xpath1, String xpath2) throws InterruptedException
 	{
-		List<WebElement> itinerarier_List = driver.findElements(By.xpath(xpath));
-		
-		System.out.println("Number of day plans under Itinerary tab:"+itinerarier_List.size());
-		
+		driver.findElement(By.xpath(xpath1)).click();
+		List<WebElement> itinerariesList = driver.findElements(By.xpath(xpath2));
+		Assert.assertFalse(itinerariesList.isEmpty());
+		{
+			System.out.println("Number of days plan:"+itinerariesList.size());
+		}
+		Thread.sleep(3000);
+	}
+	
+	public void clickBookButton(String xpath) throws InterruptedException
+	{
+		driver.findElement(By.xpath(xpath)).click();
+		Thread.sleep(3000);
 	}
 }

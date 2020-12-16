@@ -10,6 +10,8 @@
       <class name="com.atmecs.yatra.testscript.YatraCruiseTest">
         <methods>
           <include name="beforeMethod"/>
+          <include name="initBrowser"/>
+          <include name="closeReport"/>
           <include name="cruiseTest"/>
           <include name="afterMethod"/>
         </methods>

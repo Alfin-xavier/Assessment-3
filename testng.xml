@@ -10,15 +10,15 @@
   <parameter name="browser" value="chrome"></parameter>
     <classes>
       <class name="com.atmecs.yatra.testscript.YatraCruiseTest"/>
-      <class name="com.atmecs.yatra.testscript.YatraMonumentsTest"/>
+     <!--  <class name="com.atmecs.yatra.testscript.YatraMonumentsTest"/> -->
     </classes>
   </test> 
-  
+ <!--  
    <test thread-count="2" name="FirefoxTest">
   <parameter name="browser" value="firefox"></parameter>
     <classes>
       <class name="com.atmecs.yatra.testscript.YatraCruiseTest"/>
       <class name="com.atmecs.yatra.testscript.YatraMonumentsTest"/>
     </classes>
-  </test> 
+  </test>  -->
 </suite> <!-- Suite -->

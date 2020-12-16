@@ -28,12 +28,12 @@ public class YatraMonumentsMethods
 		driver.manage().timeouts().implicitlyWait(2000, TimeUnit.SECONDS);
 	}
 	
-	public void sectionDisplayed(String xpath1, String xpath2)
+	public void sectionDisplayed(String xpath1, String xpath2) throws InterruptedException
 	{
 		WebElement monumentsSection = driver.findElement(By.xpath(xpath1));
 		Assert.assertTrue(monumentsSection.isDisplayed());
 		
-			driver.manage().timeouts().implicitlyWait(2000, TimeUnit.SECONDS);
+			Thread.sleep(2000);
 		
 			List<WebElement> img = monumentsSection.findElements(By.className("image-holder"));
 			

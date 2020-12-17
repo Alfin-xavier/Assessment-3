@@ -57,6 +57,10 @@ public class YatraCruiseTest extends BasePage
 		
 		methods.switchingWindow();
 		
+		test.log(Status.INFO, "Verifying given datas");
+		
+		methods.verifyDatas(cruiseProps.getProperty("itineraries_reuslt"));
+		
 		test.log(Status.INFO,"Clicking the Itineraries tab and verifying days of plan under Itinerary");
 		
 		methods.verifyItineraries(cruiseProps.getProperty("itineraries_menu"),cruiseProps.getProperty("itineraries_list"));

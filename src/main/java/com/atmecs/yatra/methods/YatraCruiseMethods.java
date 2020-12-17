@@ -83,4 +83,11 @@ public class YatraCruiseMethods
 		driver.findElement(By.xpath(xpath)).click();
 		Thread.sleep(3000);
 	}
+	
+	public void verifyDatas(String xpath)
+	{
+		String expectedPlanDatas = "4 Nights | Australia | Carnival Cruise Lines: Spirit";
+		String actualPlanDatas = driver.findElement(By.xpath(xpath)).getText();
+		Assert.assertEquals(actualPlanDatas, expectedPlanDatas, "Plan datas verified");
+	}
 }

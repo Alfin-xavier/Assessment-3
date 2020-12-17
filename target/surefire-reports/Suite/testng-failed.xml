@@ -7,15 +7,15 @@
   <test thread-count="5" parallel="tests" name="ChromeTest(failed)" verbose="0">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.atmecs.yatra.testscript.YatraCruiseTest">
+      <class name="com.atmecs.yatra.testscript.YatraMonumentsTest">
         <methods>
           <include name="beforeMethod"/>
           <include name="initBrowser"/>
           <include name="closeReport"/>
-          <include name="cruiseTest"/>
+          <include name="monumentsTest"/>
           <include name="afterMethod"/>
         </methods>
-      </class> <!-- com.atmecs.yatra.testscript.YatraCruiseTest -->
+      </class> <!-- com.atmecs.yatra.testscript.YatraMonumentsTest -->
     </classes>
   </test> <!-- ChromeTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

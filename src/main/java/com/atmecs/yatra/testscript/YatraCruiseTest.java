@@ -5,6 +5,7 @@ import java.util.Properties;
 import org.testng.annotations.Test;
 
 import com.atmecs.yatra.constants.FilePathConstants;
+import com.atmecs.yatra.constants.LocatorKeyFile;
 import com.atmecs.yatra.methods.YatraCruiseMethods;
 import com.atmecs.yatra.page.BasePage;
 import com.atmecs.yatra.utils.PropertyReader;
@@ -13,6 +14,8 @@ import com.aventstack.extentreports.Status;
 public class YatraCruiseTest extends BasePage
 {
 	YatraCruiseMethods methods;
+	
+	LocatorKeyFile locatorKey;
 
 	Properties cruiseProps;
 
@@ -22,6 +25,8 @@ public class YatraCruiseTest extends BasePage
 		test = extent.createTest("YatraCruiseTest");
 		
 		methods = new YatraCruiseMethods(driver);
+		
+		locatorKey = new LocatorKeyFile();
 
 		cruiseProps = PropertyReader.readProperties(FilePathConstants.CRUISE_LOCATORS);
 

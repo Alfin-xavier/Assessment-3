@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="tests">
+<suite name="Suite" parallel="false" >
   
   	<listeners>
 		<listener class-name="com.atmecs.yatra.utils.TestNGListeners"></listener>
@@ -10,11 +10,11 @@
   <parameter name="browser" value="chrome"></parameter>
     <classes>
       <class name="com.atmecs.yatra.testscript.YatraCruiseTest"/>
-      <class name="com.atmecs.yatra.testscript.YatraMonumentsTest"/>
+     <!--  <class name="com.atmecs.yatra.testscript.YatraMonumentsTest"/> -->
     </classes>
   </test> 
   
-  <!--  <test thread-count="2" name="FirefoxTest">
+   <!-- <test thread-count="2" name="FirefoxTest">
   <parameter name="browser" value="firefox"></parameter>
     <classes>
       <class name="com.atmecs.yatra.testscript.YatraCruiseTest"/>

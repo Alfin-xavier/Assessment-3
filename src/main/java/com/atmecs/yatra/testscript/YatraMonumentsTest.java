@@ -15,27 +15,35 @@ public class YatraMonumentsTest extends BasePage
 
 	 YatraMonumentsMethods methods;
 
-	 Properties cruiseProps;
+	 Properties monumentProps;
 	 
 	@Test
 	public void monumentsTest() throws InterruptedException
 	{
-		test = extent.createTest("YatraMonuments");
+		test = extent.createTest("YatraMonumentTest");
 		
 		methods = new YatraMonumentsMethods(driver);
 
-		cruiseProps = PropertyReader.readProperties(FilePathConstants.MONUMENTS_LOCATORS);
+		monumentProps = PropertyReader.readProperties(FilePathConstants.MONUMENTS_LOCATORS);
 		
 		test.log(Status.INFO,"Clicking the + More option");
 
-		methods.clickMoreLink(cruiseProps.getProperty("more_link"));
+		methods.clickMoreLink(monumentProps.getProperty("more_link"));
 		
 		test.log(Status.INFO,"Clicking the Monument tab");
 		
-		methods.clickMonumentTab(cruiseProps.getProperty("monuments_menu"));
+		methods.clickMonumentTab(monumentProps.getProperty("monuments_menu"));
 		
-		test.log(Status.INFO,"Checking the top monument section and verify the monuments");
+		test.log(Status.INFO,"Checking the top monument section");
 		
-		methods.sectionDisplayed(cruiseProps.getProperty("top_monuments_section"), cruiseProps.getProperty("view_all"));
+		methods.sectionDisplayed(monumentProps.getProperty("top_monuments_section"));
+		
+		test.log(Status.INFO, "Verifying QUTUB MINAR monumnet");
+		
+		methods.verifyMonuments(monumentProps.getProperty("qutubMinarMonument"), "QUTUB MINAR is verified");
+		
+		test.log(Status.INFO, "Verifying HUMAYUNS TOMB monumnet");
+		
+		methods.verifyMonuments(monumentProps.getProperty("humayunsTombMonument"), "HUMAYUNS TOMB is verified");
 	}
 }

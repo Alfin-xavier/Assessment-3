@@ -28,23 +28,33 @@ public class YatraMonumentsMethods
 		driver.manage().timeouts().implicitlyWait(2000, TimeUnit.SECONDS);
 	}
 	
-	public void sectionDisplayed(String xpath1, String xpath2) throws InterruptedException
+	public void sectionDisplayed(String xpath1) throws InterruptedException
 	{
 		WebElement monumentsSection = driver.findElement(By.xpath(xpath1));
+		
 		Assert.assertTrue(monumentsSection.isDisplayed());
 		
+		if(monumentsSection.isDisplayed()==true)
+		{
 			Thread.sleep(2000);
-		
+
 			List<WebElement> img = monumentsSection.findElements(By.className("image-holder"));
-			
-			System.out.println("Monuments are displayed under the Top Monuments section:"+img.size());
-			
-			for(int i= 0; i<img.size();i++)
-			{
-				boolean text = img.get(i).isDisplayed();
-				System.out.println("Top Monuments:"+ text);
-				
-			}
-			
+
+			System.out.println("Monuments are displayed under the Top Monuments section:" + img.size());
+		}
+		
+	}
+	
+	public void verifyMonuments(String xpath,String msg)
+	{
+		WebElement verifyMonument = driver.findElement(By.xpath(xpath));
+		
+		Assert.assertTrue(verifyMonument.isDisplayed());
+		
+		if(verifyMonument.isDisplayed()== true)
+		{
+			System.out.println(msg);
+		}
+		driver.manage().timeouts().implicitlyWait(2000, TimeUnit.SECONDS);
 	}
 }

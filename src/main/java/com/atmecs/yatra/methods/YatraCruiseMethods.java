@@ -61,6 +61,7 @@ public class YatraCruiseMethods
 		itineraries.click();
 		List<WebElement> itinerary = driver.findElements(By.xpath(xpath2));
 		Assert.assertFalse(itinerary.isEmpty());
+		if(itinerary.isEmpty()==false)
 		{
 			System.out.println("Number of days plan under Itinerary:"+itinerary.size());
 		}
@@ -72,6 +73,7 @@ public class YatraCruiseMethods
 		driver.findElement(By.xpath(xpath1)).click();
 		List<WebElement> itinerariesList = driver.findElements(By.xpath(xpath2));
 		Assert.assertFalse(itinerariesList.isEmpty());
+		if(itinerariesList.isEmpty()==false)
 		{
 			System.out.println("Number of days plan:"+itinerariesList.size());
 		}

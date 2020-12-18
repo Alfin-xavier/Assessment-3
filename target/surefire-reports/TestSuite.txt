@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 55.771 s <<< FAILURE! - in TestSuite
-com.atmecs.yatra.testscript.YatraMonumentsTest.monumentsTest  Time elapsed: 0.465 s  <<< FAILURE!
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 61.238 s <<< FAILURE! - in TestSuite
+com.atmecs.yatra.testscript.YatraMonumentsTest.monumentsTest  Time elapsed: 0.001 s  <<< FAILURE!
 java.lang.NullPointerException
 	at com.atmecs.yatra.testscript.YatraMonumentsTest.monumentsTest(YatraMonumentsTest.java:23)
 
